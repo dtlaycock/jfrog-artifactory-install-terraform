@@ -7,13 +7,6 @@ terraform {
     }
   }
   required_version = ">= 1.0"
-  backend "remote" {
-      hostname = "strategicus.jfrog.io"
-      organization = "dominicl-terraform-state-local"
-      workspaces {
-        prefix = "dominicl-arti-install-"
-      }
-  }
 }
 
 provider "aws" {
