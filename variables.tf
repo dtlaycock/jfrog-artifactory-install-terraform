@@ -1,3 +1,9 @@
+# AWS Profile Variable
+variable "aws_profile" {
+  description = "AWS CLI profile to use"
+  type        = string
+  default     = "default"
+}
 # Variables
 variable "aws_region" {
   description = "AWS region"
@@ -67,8 +73,8 @@ variable "db_password" {
 }
 
 # S3 Filestore Variables
-variable "s3_bucket_name" {
-  description = "S3 bucket name for Artifactory filestore"
+variable "s3_bucket_prefix" {
+  description = "S3 bucket prefix for Artifactory filestore, a random string will be added to ensure it is unique"
   type        = string
   default     = "artifactory-filestore"
 }
