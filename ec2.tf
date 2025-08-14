@@ -31,7 +31,7 @@ resource "aws_instance" "artifactory_instance" {
   iam_instance_profile   = aws_iam_instance_profile.artifactory_profile.name
   key_name               = var.key_name != "" ? var.key_name : null
 
-  user_data = data.template_file.user_data.rendered
+  user_data = local.user_data
   root_block_device {
     volume_size = 50
     volume_type = "gp3"
