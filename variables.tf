@@ -53,6 +53,12 @@ variable "db_name" {
   default     = "artifactory"
 }
 
+variable "db_use_secrets_manager" {
+  description = "Determines whether RDS manages the credentials in Secrets Manager. Negates the need for username and password if set to true."
+  type        = bool
+  default     = false
+}
+
 variable "db_username" {
   description = "Database master username"
   type        = string

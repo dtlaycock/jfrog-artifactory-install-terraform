@@ -25,7 +25,7 @@ output "database_name" {
 
 output "database_username" {
   description = "Database master username"
-  value       = aws_db_instance.artifactory_db.username
+  value       = var.db_use_secrets_manager ? "Credentials managed by secretsManager" : aws_db_instance.artifactory_db.username
 }
 
 output "s3_bucket_name" {
