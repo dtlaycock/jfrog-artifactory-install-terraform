@@ -16,7 +16,7 @@ The deployment creates:
 
 ## Prerequisites
 
-1. **AWS CLI configured** with appropriate permissions
+1. **AWS CLI configured** with appropriate permissions 
 2. **Terraform** installed (version >= 1.0)
 3. **AWS credentials** configured (update `~/.aws/credentials` file)
 
@@ -61,14 +61,14 @@ The deployment creates:
 | `aws_region` | AWS region for deployment | `us-east-1` | No |
 | `instance_type` | EC2 instance type | `t3.medium` | Yes |
 | `artifactory_version` | JFrog Artifactory version | `latest` | No |
-| `key_name` | SSH key pair name | `""` | Yes |
+| `key_name` | SSH key pair name (see aws ec2 describe-key-pairs for KeyName values) | `""` | Yes |
 | `db_instance_class` | RDS instance class | `db.t3.micro` | Yes |
 | `db_allocated_storage` | RDS storage in GB | `20` | No |
 | `db_engine_version` | PostgreSQL version | `14.17` | No |
 | `db_name` | Database name | `artifactory` | No |
 | `db_username` | Database username | `artifactory` | No |
 | `db_password` | Database password | `password` | No |
-| `s3_bucket_name` | S3 bucket name for filestore | `artifactory-filestore` | Yes |
+| `s3_bucket_prefix` | S3 bucket name for filestore | `artifactory-filestore` | Yes |
 | `s3_bucket_versioning` | Enable S3 bucket versioning | `true` | No |
 
 ### Instance Specifications

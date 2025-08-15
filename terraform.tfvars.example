@@ -1,5 +1,6 @@
 # AWS Configuration
 aws_region = "us-east-1"
+aws_profile = "default"
 
 # EC2 Instance Configuration
 instance_type = "t3.medium"
@@ -19,7 +20,7 @@ artifactory_version = "7.77.7"
 # db_password = "YourSecurePassword123!"
 
 # S3 Filestore Configuration
-# s3_bucket_name = "artifactory-filestore"
+# s3_bucket_prefix = "artifactory-filestore"
 # s3_bucket_versioning = true
 
 

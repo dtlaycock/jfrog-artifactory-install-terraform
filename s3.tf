@@ -1,13 +1,25 @@
+# Random string for unique S3 bucket name
+resource "random_string" "bucket_suffix" {
+  length  = 6
+  upper   = false
+  special = false
+}
+
+# Local value for unique bucket name
+locals {
+  unique_s3_bucket_name = "${var.s3_bucket_prefix}-${random_string.bucket_suffix.result}"
+}
+
 # S3 Bucket for Artifactory Filestore
 resource "aws_s3_bucket" "artifactory_filestore" {
-  bucket = var.s3_bucket_name
+  bucket = local.unique_s3_bucket_name
 
   tags = {
     Name = "${var.additional_tags}-filestore"
   }
 }
 
-# S3 Bucket Versioning
+# S3 Bucket Versioning    
 resource "aws_s3_bucket_versioning" "artifactory_filestore_versioning" {
   bucket = aws_s3_bucket.artifactory_filestore.id
   versioning_configuration {
